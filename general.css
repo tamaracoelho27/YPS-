@@ -1,113 +1,137 @@
-/* === Base Setup === */
 html, body {
-  margin: 0;
+  height: 150vh;
+
   padding: 0;
-  background-color: #c4e2d8; /* soft green */
-  font-family: 'Albert Sans', sans-serif;
+  margin: 0;
+  background-color: #A6D1CB;
+
+  width: 100%;  /* ✅ use 100% of screen width */
+  overflow-x: hidden;  /* ✅ prevent horizontal scroll */
   box-sizing: border-box;
 }
 
-/* === Top Bar with Logo and Title === */
-.top-bar {
+.logo {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: flex-start;
-  padding: 1rem 2rem;
-  flex-wrap: wrap;
+  position: absolute;
+  top: 5%;
 }
 
-.logo img {
-  height: 70px;
-  margin-right: 1rem;
-}
-
-.page-title {
-  font-family: 'Livvic', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #238188;
-  margin: 0;
-}
-
-/* === Navbar === */
-.navbar {
-  background-color: #f0746c;
-  padding: 0.8rem 1rem;
-  display: flex;
+.title {
+  display: inline-flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-radius: 40px;
-  margin: 0 auto;
-  width: 95%;
-  max-width: 1000px;
+  position: absolute;
+  left: 30%;
+}
+
+.title h2 {
+  font-family: "Livvic";
+  font-size: 200%;
+  font-weight: 800;
+  color: #238188;
+  flex-shrink: 0;
+}
+
+.navbar {
+  background-color: #f0746c;
+  opacity: 0.9;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  min-width: 80%;
+  min-height: fit-content;
   box-sizing: border-box;
-  flex-wrap: wrap;
+  border-radius: 40px;
 }
 
 .nav-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 2rem;
   list-style: none;
-  gap: 1.2rem;
-  padding: 0;
-  margin: 0;
-  width: 100%;
+  margin-left: 10%;
+  padding: 0 0.05rem;
+  align-items: space-evenly;
 }
 
 .nav-list li a {
   text-decoration: none;
   color: white;
-  font-size: 0.95rem;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: transform 0.3s ease;
+  font-family: "Albert sans";
+  font-size: 100%;
 }
 
-.nav-list li a:hover {
+li::after {
+  text-decoration: none;
+  color: white;
+}
+
+li:hover {
   transform: scale(1.1);
+  transition: ease 0.3s;
 }
 
-/* === Responsive Design === */
+/* == Responsive Design == */
 @media (max-width: 768px) {
-  .top-bar {
-    justify-content: center;
-    text-align: center;
-  }
-
-  .logo img {
-    height: 60px;
-    margin-right: 0;
-    margin-bottom: 0.5rem;
-  }
-
-  .page-title {
-    font-size: 1.5rem;
-    width: 100%;
-  }
-
   .navbar {
-    width: 90%;
+    position: static;
+    width: 90%;       /* ✅ keep it within screen */
+    margin: 1rem auto;
     border-radius: 20px;
+    padding: 1rem;
+    box-sizing: border-box;
   }
 
   .nav-list {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.8rem;
+    gap: 1rem;
   }
 
   .nav-list li {
+    padding: 0.5rem 0;
+  }
+
+  .title {
+    position: static;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .title h2 {
+    font-size: 180%;
+  }
+
+  .logo img {
+    height: 50px;
+    width: auto;
   }
 }
+  
 
 @media (max-width: 480px) {
-  .page-title {
-    font-size: 1.3rem;
+  .navbar {
+    margin: 1rem 2%;
+    padding: 1.5rem 1rem;
   }
 
-  .nav-list li a {
-    font-size: 0.9rem;
+  .nav-list {
+    gap: 0.5rem;
+  }
+
+  .title h2 {
+    font-size: 160%;
+  }
+
+  .logo img {
+    height: 35px;
+    width: auto;
   }
 }
