@@ -1,0 +1,113 @@
+/* === Base Setup === */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #c4e2d8; /* soft green */
+  font-family: 'Albert Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+/* === Top Bar with Logo and Title === */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  height: 70px;
+  margin-right: 1rem;
+}
+
+.page-title {
+  font-family: 'Livvic', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #238188;
+  margin: 0;
+}
+
+/* === Navbar === */
+.navbar {
+  background-color: #f0746c;
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1000px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 1.2rem;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: transform 0.3s ease;
+}
+
+.nav-list li a:hover {
+  transform: scale(1.1);
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .top-bar {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logo img {
+    height: 60px;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+
+  .navbar {
+    width: 90%;
+    border-radius: 20px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.3rem;
+  }
+
+  .nav-list li a {
+    font-size: 0.9rem;
+  }
+}
