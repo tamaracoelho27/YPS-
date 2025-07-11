@@ -1,0 +1,858 @@
+html, body {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    background-color: #c4e2d8;
+    cursor: pointer;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: absolute;
+    top: clamp(1%, 2vw, 3%);
+    left: clamp(0.5%, 2vw, 2%);
+}
+
+.logo img {
+    height: clamp(40px, 6vw, 120px);
+    width: auto;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 30%;
+    top: clamp(1%, 2vw, 3%);
+}
+
+.title h1 {
+    font-family: "Livvic";
+    font-size: clamp(1.5rem, 4vw, 5rem);
+    font-weight: 800;
+    color: #238188;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #f0746c;
+    opacity: 0.9;
+    padding: clamp(0.5rem, 2vw, 1rem) clamp(0.3rem, 1vw, 0.5rem);
+    margin-top: clamp(5%, 8%, 12%);
+    position: absolute;
+    left: clamp(5%, 17%, 20%);
+    top: clamp(-2%, -3%, -4%);
+    width: 70%;
+    min-height: fit-content;
+    box-sizing: border-box;
+    border-radius: 40px;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 4vw, 4rem);
+    list-style: none;
+    margin-left: 10%;
+    padding: 0 0.05rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: white;
+    font-family: "Albert sans";
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+li::after {
+    text-decoration: none;
+    color: white;
+}
+
+li:hover {
+    transform: scale(1.1);
+    transition: ease 0.3s;
+}
+
+.description {
+    width: 65%;
+    height: 30%;
+    background-color: #539EA1;
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    border-radius: 40px;
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+}
+
+.description h4 {
+    position: absolute;
+    left: 35%;
+    top: -5%;
+    font-family: "Livvic";
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: white;
+    text-align: center;
+    width: 30%;
+}
+
+.description p {
+    text-align: center;
+    width: 70%;
+    position: absolute;
+    left: 15%;
+    top: 35%;
+    font-family: "Albert sans";
+    color: white;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.container {
+    position: absolute;
+    top: 75%;
+    left: 10%;
+    width: 80%;
+    max-width: 80vw;
+    box-sizing: border-box;
+}
+
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    height:0%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-list {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 25px;
+}
+
+.card-item {
+    width: 25%;
+    max-width: 100%;
+    flex-shrink: 0;
+    height: auto;
+    min-height: 400px;
+    background: #539EA1;
+    border-radius: 15px;
+    padding: 20px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.card-item:hover {
+    transform: scale(1);
+}
+
+.card-item.active {
+    transform: scale(1.05);
+}
+
+.image1 {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.card-item .description {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: "Albert Sans";
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    margin-bottom: 10px;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: white;
+}
+
+.left, .right {
+    display: flex;
+    background-color: #c4e2d8;
+    border: none;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 100%;
+}
+
+.left {
+    left: 5%;
+}
+
+.right {
+    right: 5%;
+}
+
+.viewmore {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 140%;
+    z-index: 10;
+    width: 90%;
+    max-width: 500px;
+}
+
+.view-more-button {
+    background-color: #f0746c;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    font-family: "Livvic";
+    padding: 1rem;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    width: 100%;
+    max-width: 500px;
+    height: 80px;
+    box-sizing: border-box;
+}
+
+.view-more-button:hover {
+    transform: scale(1.1);
+    transition: ease 0.3s;
+    box-shadow: 0 6px 20px rgba(240, 116, 108, 0.4);
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+#Footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100vw;
+    height: 10%;
+    min-height: 80px;
+    background-color: #238188;
+    padding: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    top: 170%;
+    box-sizing: border-box;
+}
+
+#Footer .name {
+    color: white;
+    font-family: "Albert sans";
+    margin-left: 5%;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+#Footer a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+#Footer a:visited,
+#Footer a:hover,
+#Footer a:active {
+    color: white;
+    text-decoration: none;
+}
+
+#Footer a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .title h1 {
+        font-size: clamp(2rem, 3.5vw, 3.5rem);
+    }
+    
+    .navbar {
+        width: 70%;
+        left: 15%;
+    }
+    
+    .description {
+        width: 65%;
+        left: 17.5%;
+    }
+    
+    .container {
+        width: 80%;
+        left: 10%;
+    }
+    
+    .card-item {
+        width: 24%;
+        min-height: 420px;
+    }
+}
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .title {
+        left: 15%;
+        right: 5%;
+    }
+    
+    .title h1 {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+    
+    }
+    
+    .navbar {
+        width: 95%;
+        left: 3%;
+        top: 5%;
+    }
+    
+    .nav-list {
+        gap: clamp(1rem, 3vw, 2.5rem);
+        margin-left: 5%;
+    }
+    
+    .description {
+        width: 80%;
+        left: 10%;
+        top: 40%;
+    }
+    
+    .description h4 {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        top:-10%;
+    }
+    
+    .container {
+        width: 90%;
+        left: 10%;
+        top: 85%;
+    }
+    
+    .card-item {
+        min-width: 280px;
+    }
+    
+    .viewmore {
+        top: 170%;
+    }
+    .left,.right{
+        top:110%;
+    }
+    
+    #Footer {
+        top: 200%;
+    }
+}
+
+@media (max-width: 1000px){
+    .title {
+        left: 20%;
+        right: 5%;
+    }
+    
+    .navbar {
+        width: 90%;
+        left: 5%;
+        top: 5%;
+    }
+    
+    .nav-list {
+        gap: clamp(0.5rem, 2vw, 1.5rem);
+        margin-left: 2%;
+        justify-content: space-evenly;
+    }
+    
+     .nav-list li a{
+        font-size: 80%;
+    }
+    .description {
+        width: 90%;
+        left: 5%;
+        top: 45%;
+        height: 35%;
+    }
+    
+    .description h4 {
+        left: 50%;
+        width: 90%;
+        top:-10%;
+    }
+    
+    .description p {
+        top: 40%;
+        width: 90%;
+        left: 5%;
+    }
+    
+    .container {
+        width: 95%;
+        left: 10%;
+        top: 90%;
+    }
+    
+    .card-item {
+        width: 30%;
+        min-width: 200px;
+        min-height: 250px;
+    }
+    .card-item img{
+        height:70%
+    }
+    .card-list {
+        gap: 25px;
+    }
+    .card-item .description{
+        height:fit-content
+    }
+    
+    .left {
+        left: 2%;
+        top: 115%;
+    }
+    
+    .right {
+        right: 2%;
+        top: 115%;
+    }
+    
+    .viewmore {
+        top: 160%;
+        width: 95%;
+    }
+    
+    #Footer {
+        flex-direction: column;
+        top: 190%;
+        height: auto;
+        min-height: 150px;
+        padding: 1rem;
+    }
+    
+    #Footer .name {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .title {
+        left: 20%;
+        right: 5%;
+    }
+    
+    .navbar {
+        width: 90%;
+        left: 5%;
+        top: 5%;
+    }
+    
+    .nav-list {
+        gap: clamp(0.5rem, 2vw, 1.5rem);
+        margin-left: 2%;
+        justify-content: space-evenly;
+    }
+    
+     .nav-list li a{
+        font-size: 80%;
+    }
+    .description {
+        width: 90%;
+        left: 5%;
+        top: 45%;
+        height: 35%;
+    }
+    
+    .description h4 {
+        left: 50%;
+        width: 90%;
+        top:-10%;
+    }
+    
+    .description p {
+        top: 40%;
+        width: 90%;
+        left: 5%;
+    }
+    
+    .container {
+        width: 95%;
+        left: 10%;
+        top: 90%;
+    }
+    
+    .card-item {
+        width: 45%;
+        min-width: 200px;
+        min-height: 250px;
+    }
+    .card-item img{
+        height:70%
+    }
+    .card-list {
+        gap: 15px;
+    }
+    .card-item .description{
+        height:fit-content
+    }
+    
+    .left {
+        left: 2%;
+        top: 115%;
+    }
+    
+    .right {
+        right: 2%;
+        top: 115%;
+    }
+    
+    .viewmore {
+        top: 160%;
+        width: 95%;
+    }
+    
+    #Footer {
+        flex-direction: column;
+        top: 190%;
+        height: auto;
+        min-height: 150px;
+        padding: 1rem;
+    }
+    
+    #Footer .name {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media(max-width:600px) and (orientation:landscape){
+    .title {
+        left: 20%;
+        right: 5%;
+    }
+    
+    .navbar {
+        width: 90%;
+        left: 5%;
+        top: 5%;
+    }
+    
+    .nav-list {
+        gap: clamp(0.5rem, 2vw, 1.5rem);
+        margin-left: 2%;
+        justify-content: space-evenly;
+    }
+    
+    .nav-list li a{
+        font-size: 80%;
+    }
+    .description {
+        width: 90%;
+        left: 5%;
+        top: 40%;
+        height: 35%;
+    }
+    
+    .description h4 {
+        left: 50%;
+        width: 90%;
+        top:-10%;
+    }
+    
+    .description p {
+        top: 40%;
+        width: 90%;
+        left: 5%;
+    }
+    
+    .container {
+        width: 95%;
+        left: 10%;
+        top: 80%;
+    }
+    
+    .card-item {
+        width: 45%;
+        min-width: 200px;
+        min-height: 250px;
+    }
+    .card-item img{
+        height:70%
+    }
+    .card-list {
+        gap: 15px;
+    }
+    .card-item .description{
+        height:fit-content
+    }
+    
+    .left {
+        left: 2%;
+        top: 100%;
+    }
+    
+    .right {
+        right: 2%;
+        top: 100%;
+    }
+    
+    .viewmore {
+        top: 160%;
+        width: 95%;
+    }
+    
+    #Footer {
+        flex-direction: column;
+        top: 190%;
+        height: auto;
+        min-height: 150px;
+        padding: 1rem;
+    }
+    
+    #Footer .name {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .title {
+        left: 15%;
+        right: 5%;
+    }
+    
+    .title h1{
+        font-size:120%
+    }
+    .navbar {
+        width: 95%;
+        left: 2.5%;
+        top: 5%;
+    }
+    
+    .nav-list {
+        gap: clamp(1.2rem, 1.5vw, 1rem);
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    }
+    .nav-list li a{
+        font-size: 80%;
+    }
+    
+    .description {
+        width: 95%;
+        left: 5%;
+        top: 40%;
+        height: 40%;
+    }
+    
+    .description h4 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        top: 2%;
+    }
+    
+    .description p {
+        top: 40%;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+    .container{
+        top:85%;
+        width: 75%;
+        left:13%;
+       
+    }
+    .card-list{
+        gap:10%;
+    }
+    .card-item{
+        width:90%;
+    }
+    .card-item img{
+        height:60%;
+    }
+
+    .card-item .description{
+        top:-2%;
+        height:20%;
+    }
+    
+    .left, .right {
+        height: 40px;
+        width: 40px;
+        top: 110%;
+    }
+    
+    .viewmore {
+        top: 150%;
+        width: 70%;
+    }
+    
+    .view-more-button {
+        height: 60px;
+        padding: 0.8rem;
+    }
+    
+    #Footer {
+        top: 180%;
+        padding: 0.8rem;
+        height:30%;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+    .title h1 {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+    }
+
+    .navbar {
+        padding: 0.5rem 0.2rem;
+        margin-top:10%;
+    }
+    
+    .nav-list li a {
+        font-size: clamp(0.7rem, 2.5vw, 1rem);
+        padding: 0.2rem 0.3rem;
+    }
+    
+    .description {
+        height: 30%;
+        top: 35%;
+        left:5%;
+    }
+    
+    .description h4 {
+        top: 2%;
+    }
+    
+    .description p {
+        top: 35%;
+        font-size: clamp(0.8rem, 2.2vw, 1rem);
+    }
+    .container{
+        top:70%;
+        width: 80%;
+    }
+    .card-item {
+        width: 20%;
+        height:250px;
+   }
+   .card-item img{
+    height:50%;
+   }
+    .card-list{
+        gap:15px;
+    }
+    .card-list .description{
+        font-size: 15px;
+    }
+    .left{
+        top:130%;
+        left:20px;
+    }
+    .right{
+        top:130%;
+        left:80%;
+    }
+    .viewmore {
+        top: 140%;
+        left:50%
+    }
+    
+    .view-more-button {
+        height: 50px;
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
+    }
+    
+    #Footer {
+        top: 175%;
+    }
+}
+
+@media (min-width:1024px){
+    .title {
+        left: 15%;
+        right: 5%;
+    }
+    
+    .title h1 {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+    
+    }
+    
+    .navbar {
+        width: 95%;
+        left: 3%;
+        top: 5%;
+    }
+    
+    .nav-list {
+        gap: clamp(1rem, 3vw, 2.5rem);
+        margin-left: 5%;
+    }
+    
+    .description {
+        width: 80%;
+        left: 10%;
+        top: 40%;
+    }
+    
+    .description h4 {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        top:-10%;
+    }
+    
+    .container {
+        width: 90%;
+        left: 10%;
+        top: 85%;
+    }
+    
+    .card-item {
+        min-width: 280px;
+    }
+    
+    .viewmore {
+        top: 150%;
+    }
+    .left,.right{
+        top:110%;
+    }
+    
+    #Footer {
+        top: 170%;
+    }
+}
