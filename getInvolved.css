@@ -1,0 +1,409 @@
+html,body{
+    height: 100vh;
+    width: 100vw;
+    padding:0;
+    margin:0;
+    background-color: #c4e2d8;
+    cursor:pointer;
+}
+
+main {
+    margin-top: 40px;
+}
+
+.logo{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    position:absolute;
+    top: clamp(1%, 2vw, 3%);
+    left: clamp(0.5%, 2vw, 2%);
+
+}
+.title{
+    display:inline-flex; 
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    position:absolute;
+    left:30%;  
+}
+
+.title h1{
+    font-family:"Livvic";
+    font-size: 200%;
+    font-weight: 800;
+    color: #238188;
+    flex-shrink: 0;
+}
+
+.navbar{
+    background-color: #f0746c;
+    opacity: 0.9;   
+    padding: 1rem 1rem;
+    position:absolute; 
+    top:17%;
+    left:12%;
+    min-width:80%;
+    min-height: fit-content;
+    box-sizing: border-box;
+    border-radius: 40px;
+}
+
+.nav-list{
+    display: flex; 
+    flex-wrap: nowrap;
+    gap: 2rem;
+    list-style: none;
+    margin-left: 10%;
+    padding: 0 0.05rem;;
+    align-items: space-evenly;
+}
+.nav-list li a{
+    text-decoration: none;
+    color: white;
+    font-family: "Albert sans";
+    font-size:100%
+}
+
+li::after{
+    text-decoration:none; 
+    color:white;
+}
+li:hover{
+    transform: scale(1.1);
+    transition: ease 0.3s;
+}
+footer{
+    margin-top:auto;
+    width:100%;
+}
+#Footer{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    width:100%;
+    height:10%;
+    background-color:  #238188;
+    padding-bottom: 0.5rem;
+    position:static; /*Keeps the footer stuck to the bottom of the page*/
+    bottom:0;
+}
+
+#Footer .name{
+    color: white;
+    font-family: "Albert sans";
+    margin-left:5%;
+}
+#Footer a {
+    color: white;
+    text-decoration: none;
+    display: inline-block; 
+    transition: opacity 0.3s ease; 
+}
+
+#Footer a:visited,
+#Footer a:hover,
+#Footer a:active {
+    color: white;
+    text-decoration: none;
+}
+
+#Footer a:hover {
+    opacity: 0.8; 
+    text-decoration: underline; 
+}
+
+@media (max-width: 1024px) {
+    html, body {
+        width: 100vw;
+    }
+    
+    .title {
+        left: 25%;
+    }
+    
+    .title h1 {
+        font-size: 180%;
+    }
+    
+    .navbar {
+        left: 5%;
+        min-width: 90%;
+        padding: 0.8rem;
+    }
+    
+    .nav-list {
+        gap: 1.5rem;
+        margin-left: 5%;
+    }
+    
+    .nav-list li a {
+        font-size: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    html, body {
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .logo {
+        top: 3%;
+        left: 2%;
+    }
+    
+    .logo img {
+        height: 60px;
+    }
+    
+    .title {
+        left: 55%;
+        transform: translateX(-50%);
+        top: 5%;
+        width: 60%;
+        text-align: center;
+    }
+    
+    .title h1 {
+        font-size: 160%;
+        text-align: center;
+        margin: 0;
+    }
+    
+    .navbar {
+        top: 20%;
+        left: 2%;
+        min-width: 96%;
+        padding: 1rem 0.5rem;
+    }
+    
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-left: 2%;
+        justify-content: center;
+    }
+    
+    .nav-list li a {
+        font-size: 85%;
+        padding: 0.3rem 0.5rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .logo {
+        top: 1%;
+        left: 1%;
+    }
+    
+    .logo img {
+        height: 50px;
+    }
+    
+    .title {
+        top: 2%;
+        width: 70%;
+    }
+    
+    .title h1 {
+        font-size: 120%;
+        line-height: 1.2;
+    }
+    
+    .navbar {
+        top: 25%;
+        left: 1%;
+        min-width: 98%;
+        padding: 0.8rem 0.3rem;
+        border-radius: 25px;
+    }
+    
+    .nav-list {
+        gap: 0.8rem;
+        margin-left: 1%;
+        flex-wrap: wrap;
+    }
+    
+    .nav-list li {
+        flex: 0 0 auto;
+    }
+    
+    .nav-list li a {
+        font-size: 75%;
+        padding: 0.4rem 0.6rem;
+        display: block;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 360px) {
+
+    .logo img {
+        height: 40px;
+    }
+    
+    .title h1 {
+        font-size: 100%;
+    }
+    
+    .navbar {
+        top: 28%;
+        padding: 0.6rem 0.2rem;
+        border-radius: 20px;
+    }
+    
+    .nav-list {
+        gap: 0.5rem;
+        margin-left: 0.5%;
+    }
+    
+    .nav-list li a {
+        font-size: 70%;
+        padding: 0.3rem 0.4rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .logo {
+        left: 3%;
+    }
+    
+    .title {
+        left: 30%;
+    }
+    
+    .title h1 {
+        font-size: 250%;
+    }
+    
+    .navbar {
+        left: 15%;
+        min-width: 75%;
+    }
+    
+    .nav-list {
+        margin-left: 8%;
+    }
+    
+    .nav-list li a {
+        font-size: 100%;
+    }
+}
+
+.container {
+    background-color: #539EA1A6;
+    display: flex; /*To center the containers*/
+    flex-direction: column; /*To arrange it in a column view*/
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px; /*To adjust the spacing between the corners (screen) and containers*/
+    padding: 20px; /*To adjust the spacing inside the container itself*/
+    border-radius: 2rem;
+    font-family: 'Albert Sans', sans-serif;
+    color:#FFFFFF;
+}
+
+.container h3 { /*Heading of the containers*/
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    align-self: flex-start; /*Forces the text to align to the left*/
+    padding-left: 20px;
+
+}
+
+.container p{ /*The paragraph in the container*/
+    font-family: "Livvic";
+    font-size: 22px;
+    align-self: flex-start; /*Forces the text to align to the left*/
+    padding-left: 20px;
+}
+
+/* New flex row wrapper inside the container */
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+
+
+.content-wrapper p {
+  flex: 1;
+  min-width: 280px;
+}
+
+.content-wrapper table {
+    flex: 1;
+    min-width: 300px;
+    margin-top: -20px;
+    border-spacing: 20px;
+}
+
+.content-wrapper button {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+    background-color: #25828A;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: "Albert Sans", sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.content-wrapper button:hover {
+    background-color: #1f6f75;
+}
+
+.container-buttons {
+    padding: 10px 20px;
+    background-color: #F57B6B;
+    width:300px; /*Fixed sizing (width) of buttons*/
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: "Albert Sans", sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    /*Used to make the buttons overlap over the containers*/
+    align-self: flex-end;
+    margin-bottom:-40px;
+}
+
+
+.container-buttons:hover {
+    background-color: #ae4638;
+}
+
+
+.main-content {
+    padding-top: 250px;
+    padding-bottom: 75px; /*Used to create a gap between the main content and footer*/
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Used to center the containers horizontally */
+    gap: 40px;            /* Used to add spacing between containers */
+}
+
+.content-wrapper a {
+    text-decoration: none; /*Used to remove the lines under the href link*/
+    color:white;
+    font-size: 20px;
+    font-family: "Livvic";
+}
+
+
+
