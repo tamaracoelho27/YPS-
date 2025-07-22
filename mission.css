@@ -313,7 +313,7 @@ main {
   
   
   .who-container {
-    background-color: #91D2BA;
+    background-color: rgba(240, 116, 108, 0.45);
     padding: 30px 20px;
     border-radius: 15px;
     margin: 250px auto 40px;
@@ -325,7 +325,7 @@ main {
   
   .who-container h1 {
     font-size: 4.8rem;
-    color: #1e6d72;
+    color: #d95046;
     margin-bottom: 20px;
     margin-top: 10px;
   }
