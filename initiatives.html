@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initiatives</title>
+    <link rel="stylesheet" href="initiatives.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header> 
+        <div class="logo">
+            <a href="homepage.html"><img src="logo.png" alt="YPS Logo" height="80"></a>
+        </div>
+        <div class="title">
+            <h1>YOUTH PSYCHOLOGY SOCIETY</h1>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="aboutUspage.html">About Us</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="getInvolved.html">Get Involved</a></li>
+                <li><a href="initiatives.html">Initiatives</a></li>
+                <li><a href="">Events</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="#">Contribute</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="description">
+            <h4>OUR INITIATIVES</h4>
+            <p>We lead impactful initiatives that apply psychology to real-world problems, raise awareness, and build community.</p>
+        </div>
+    </main>
+    <button class="left">
+        <img src="Arrow left-circle.png">
+    </button>
+    <button class="right">
+        <img src="Arrow right-circle.png">
+    </button>
+    <div class="container">
+        <div class="slider-wrapper">
+            <div class="card-list" id="cardList">
+                <div class="card-item active">
+                    <img src="initiativesImage1.png" alt="" class="image1"> 
+                    <p class="description">Psychology 101: Basics made simple</p> 
+                </div>
+                <div class="card-item active">
+                    <img src="initiativesImage2.png" alt="" class="image1"> 
+                    <p class="description">Cross-Cultural Storytelling Projects</p> 
+                </div>
+                <div class="card-item active">
+                    <img src="initiativesImage3.png" alt="" class="image1"> 
+                    <p class="description">School & Community Partnerships</p> 
+                </div>
+                <div class="card-item active">
+                    <img src="initiativesImage1.png" alt="" class="image1"> 
+                    <p class="description">Psychology 101: Basics made simple</p> 
+                </div>
+                <div class="card-item active">
+                    <img src="initiativesImage2.png" alt="" class="image1"> 
+                    <p class="description">Cross-Cultural Storytelling Projects</p> 
+                </div>
+                <div class="card-item active">
+                    <img src="initiativesImage3.png" alt="" class="image1"> 
+                    <p class="description">School & Community Partnerships</p> 
+                </div>
+        </div>
+    </div>
+    </div>
+    <div class="projects">
+        <button class="read-more-button">Read More About Our Projects</button>
+    </div>
+    <footer>
+        <div id="Footer">
+            <p class="name"><strong>Contact Us:</strong> Email</p>
+            <p class="name"><strong>Instagram:</strong><a href="https://www.instagram.com/youthpsychologysociety/?hl=en"> YPS Instagram</a></p>
+            <p class="name"><strong>Linkedin:</strong><a href="https://www.linkedin.com/company/youth-psychology-society/posts/?feedView=all"> YPS Linkedin</a> </p>
+        </div>
+    </footer>
+    <script>
+        const carousel = document.querySelector("#cardList"); 
+        const cards= document.querySelectorAll(".card-item"); //retrieves the list of cards
+        const rightButton = document.querySelector(".right")
+        const leftButton = document.querySelector(".left");
+
+        let currentIndex=0; //stores the current index position of the card 
+        let visibleCards=3;
+        const totalCards= cards.length; //6 cards currently in html 
+
+        function getVisibleCards(){
+            if (window.innerWidth<=480){ //phone size
+                //for a phone only one card should be seen 
+                visibleCards=1;
+            }
+            //for a tablet 2 cards should be visible
+            else if (window.innerWidth <=768){
+                visibleCards=2;
+            }
+            else{
+                visibleCards=3;
+            }
+            return visibleCards
+        }
+        function updateCarousel(){
+            let visibleCards = getVisibleCards() //retrieve the max number of cards which are visible
+            const maxIndex = totalCards - visibleCards; //if totalCards are 6 and the number of cards visble is 1 then current index should be between 0 to 5
+
+            if (currentIndex > maxIndex){
+                currentIndex = maxIndex;
+            }
+            const percentage = -(currentIndex * (100/visibleCards));
+            carousel.style.transform = `translateX(${percentage}%)`;
+        }
+
+        leftButton.addEventListener('click', ()=>{
+            if (currentIndex >0){
+                currentIndex--; 
+                updateCarousel();
+            }
+        })
+
+        rightButton.addEventListener('click',()=>{
+            let visibleCards = getVisibleCards();
+            const maxIndex = totalCards - visibleCards;
+            if (currentIndex<maxIndex){
+                currentIndex++;
+                updateCarousel();
+            }
+        })
+
+        window.addEventListener('resize', updateCarousel());
+
+        updateCarousel();
+    </script>
+</body>
+</html>
