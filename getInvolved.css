@@ -5,6 +5,20 @@ html,body{
     margin:0;
     background-color: #c4e2d8;
     cursor:pointer;
+    overflow-x: hidden;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header-section {
+    position: relative;
+    padding-top: clamp(80px, 12vw, 120px);
+    padding-bottom: clamp(10px, 2vw, 20px);
+    min-height: clamp(140px, 20vw, 180px);
 }
 
 main {
@@ -16,54 +30,85 @@ main {
     flex-direction:row;
     justify-content:flex-start;
     position:absolute;
-    top: clamp(1%, 2vw, 3%);
-    left: clamp(0.5%, 2vw, 2%);
-
+    top: clamp(10px, 3vw, 20px);
+    left: clamp(10px, 3vw, 20px);
+    z-index: 1000;
 }
+
+.logo img {
+    height: clamp(40px, 6vw, 70px);
+    width: auto;
+}
+
 .title{
-    display:inline-flex; 
+    display:flex; 
     flex-direction:row;
     justify-content: center;
     align-items:center;
     position:absolute;
-    left:30%;  
+    left: 50%;
+    transform: translateX(-50%);
+    top: clamp(50px, 10vw, 85px);
+    width: auto;
+    max-width: calc(100% - clamp(120px, 20vw, 200px));
+    z-index: 1000;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .title h1{
     font-family:"Livvic";
-    font-size: 200%;
+    font-size: clamp(1rem, 3.5vw, 2.5rem);
     font-weight: 800;
     color: #238188;
-    flex-shrink: 0;
+    flex-shrink: 1;
+    text-align: center;
+    margin: 0;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .navbar{
     background-color: #f0746c;
     opacity: 0.9;   
-    padding: 1rem 1rem;
-    position:absolute; 
-    top:17%;
-    left:12%;
-    min-width:80%;
-    min-height: fit-content;
+    padding: clamp(0.5rem, 2vw, 1rem);
+    position: absolute;
+    bottom: 0;
+    width: clamp(280px, 90%, 1200px);
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: clamp(10px, 2vw, 20px);
     box-sizing: border-box;
-    border-radius: 40px;
+    border-radius: clamp(20px, 5vw, 40px);
+    z-index: 999;
 }
 
 .nav-list{
     display: flex; 
-    flex-wrap: nowrap;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: clamp(0.3rem, 1.5vw, 1.5rem);
     list-style: none;
-    margin-left: 10%;
-    padding: 0 0.05rem;;
-    align-items: space-evenly;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
 }
+
+.nav-list li {
+    flex-shrink: 0;
+}
+
 .nav-list li a{
     text-decoration: none;
     color: white;
     font-family: "Albert sans";
-    font-size:100%
+    font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+    padding: 0.3rem 0.5rem;
+    display: block;
+    text-align: center;
+    white-space: nowrap;
 }
 
 li::after{
@@ -74,27 +119,36 @@ li:hover{
     transform: scale(1.1);
     transition: ease 0.3s;
 }
+
 footer{
     margin-top:auto;
     width:100%;
 }
+
 #Footer{
     display:flex;
-    flex-direction:row;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     width:100%;
-    height:10%;
-    background-color:  #238188;
-    padding-bottom: 0.5rem;
-    position:static; /*Keeps the footer stuck to the bottom of the page*/
-    bottom:0;
+    min-height: 60px;
+    background-color: #238188;
+    padding: 1rem;
+    box-sizing: border-box;
+    gap: 1rem;
 }
 
 #Footer .name{
     color: white;
     font-family: "Albert sans";
-    margin-left:5%;
+    margin: 0;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    text-align: center;
+    flex: 1 1 auto;
+    min-width: 200px;
 }
+
 #Footer a {
     color: white;
     text-decoration: none;
@@ -114,296 +168,330 @@ footer{
     text-decoration: underline; 
 }
 
-@media (max-width: 1024px) {
-    html, body {
-        width: 100vw;
-    }
-    
-    .title {
-        left: 25%;
-    }
-    
-    .title h1 {
-        font-size: 180%;
-    }
-    
-    .navbar {
-        left: 5%;
-        min-width: 90%;
-        padding: 0.8rem;
-    }
-    
-    .nav-list {
-        gap: 1.5rem;
-        margin-left: 5%;
-    }
-    
-    .nav-list li a {
-        font-size: 90%;
-    }
-}
-
-@media (max-width: 768px) {
-    html, body {
-        width: 100vw;
-        height: 100vh;
-    }
-    
-    .logo {
-        top: 3%;
-        left: 2%;
-    }
-    
-    .logo img {
-        height: 60px;
-    }
-    
-    .title {
-        left: 55%;
-        transform: translateX(-50%);
-        top: 5%;
-        width: 60%;
-        text-align: center;
-    }
-    
-    .title h1 {
-        font-size: 160%;
-        text-align: center;
-        margin: 0;
-    }
-    
-    .navbar {
-        top: 20%;
-        left: 2%;
-        min-width: 96%;
-        padding: 1rem 0.5rem;
-    }
-    
-    .nav-list {
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-left: 2%;
-        justify-content: center;
-    }
-    
-    .nav-list li a {
-        font-size: 85%;
-        padding: 0.3rem 0.5rem;
-    }
-}
-
-
-@media (max-width: 480px) {
-    .logo {
-        top: 1%;
-        left: 1%;
-    }
-    
-    .logo img {
-        height: 50px;
-    }
-    
-    .title {
-        top: 2%;
-        width: 70%;
-    }
-    
-    .title h1 {
-        font-size: 120%;
-        line-height: 1.2;
-    }
-    
-    .navbar {
-        top: 25%;
-        left: 1%;
-        min-width: 98%;
-        padding: 0.8rem 0.3rem;
-        border-radius: 25px;
-    }
-    
-    .nav-list {
-        gap: 0.8rem;
-        margin-left: 1%;
-        flex-wrap: wrap;
-    }
-    
-    .nav-list li {
-        flex: 0 0 auto;
-    }
-    
-    .nav-list li a {
-        font-size: 75%;
-        padding: 0.4rem 0.6rem;
-        display: block;
-        text-align: center;
-    }
-}
-
-
-@media (max-width: 360px) {
-
-    .logo img {
-        height: 40px;
-    }
-    
-    .title h1 {
-        font-size: 100%;
-    }
-    
-    .navbar {
-        top: 28%;
-        padding: 0.6rem 0.2rem;
-        border-radius: 20px;
-    }
-    
-    .nav-list {
-        gap: 0.5rem;
-        margin-left: 0.5%;
-    }
-    
-    .nav-list li a {
-        font-size: 70%;
-        padding: 0.3rem 0.4rem;
-    }
-}
-
-@media (min-width: 1200px) {
-    .logo {
-        left: 3%;
-    }
-    
-    .title {
-        left: 30%;
-    }
-    
-    .title h1 {
-        font-size: 250%;
-    }
-    
-    .navbar {
-        left: 15%;
-        min-width: 75%;
-    }
-    
-    .nav-list {
-        margin-left: 8%;
-    }
-    
-    .nav-list li a {
-        font-size: 100%;
-    }
-}
-
 .container {
     background-color: #539EA1A6;
-    display: flex; /*To center the containers*/
-    flex-direction: column; /*To arrange it in a column view*/
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 10px; /*To adjust the spacing between the corners (screen) and containers*/
-    padding: 20px; /*To adjust the spacing inside the container itself*/
-    border-radius: 2rem;
+    width: clamp(280px, 90%, 1200px);
+    margin: clamp(15px, 3vw, 25px) auto;
+    padding: clamp(15px, 4vw, 25px);
+    border-radius: clamp(1rem, 3vw, 2rem);
     font-family: 'Albert Sans', sans-serif;
     color:#FFFFFF;
+    box-sizing: border-box;
+    min-height: auto;
 }
 
-.container h3 { /*Heading of the containers*/
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    align-self: flex-start; /*Forces the text to align to the left*/
-    padding-left: 20px;
-
+.container h3 {
+    font-size: clamp(1.3rem, 3.5vw, 2.2rem);
+    margin-bottom: clamp(10px, 2vw, 15px);
+    align-self: flex-start;
+    padding-left: clamp(10px, 3vw, 20px);
+    line-height: 1.2;
+    word-wrap: break-word;
 }
 
-.container p{ /*The paragraph in the container*/
+.container p{
     font-family: "Livvic";
-    font-size: 22px;
-    align-self: flex-start; /*Forces the text to align to the left*/
-    padding-left: 20px;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    align-self: flex-start;
+    padding-left: clamp(10px, 3vw, 20px);
+    line-height: 1.4;
+    margin: 0 0 15px 0;
+    word-wrap: break-word;
 }
 
-/* New flex row wrapper inside the container */
 .content-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: clamp(15px, 4vw, 25px);
+    width: 100%;
 }
-
 
 .content-wrapper p {
-  flex: 1;
-  min-width: 280px;
+    flex: 1;
+    min-width: 100%;
+    margin-bottom: clamp(15px, 3vw, 20px);
 }
 
 .content-wrapper table {
     flex: 1;
-    min-width: 300px;
-    margin-top: -20px;
-    border-spacing: 20px;
+    width: 100%;
+    border-spacing: clamp(8px, 2.5vw, 15px);
+    margin-top: 0;
 }
 
-.content-wrapper button {
+.content-wrapper table td {
+    width: 50%;
+    vertical-align: top;
+}
+
+.table-buttons {
     width: 100%;
-    height: 100px;
-    margin-bottom: 20px;
+    height: clamp(50px, 12vw, 80px);
+    margin-bottom: clamp(10px, 2vw, 15px);
     background-color: #25828A;
     text-align: center;
     color: white;
     border: none;
     border-radius: 12px;
     font-family: "Albert Sans", sans-serif;
-    font-size: 1rem;
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
     cursor: pointer;
     transition: background-color 0.3s ease;
+    padding: clamp(5px, 2vw, 10px);
+    box-sizing: border-box;
 }
-.content-wrapper button:hover {
+
+.table-buttons:hover {
     background-color: #1f6f75;
 }
 
+.table-buttons a {
+    text-decoration: none;
+    color: white;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    font-family: "Livvic";
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-wrap: break-word;
+    text-align: center;
+}
+
 .container-buttons {
-    padding: 10px 20px;
+    padding: clamp(8px, 2vw, 10px) clamp(15px, 4vw, 20px);
     background-color: #F57B6B;
-    width:300px; /*Fixed sizing (width) of buttons*/
+    width: clamp(200px, 50%, 300px);
     color: white;
     border: none;
     border-radius: 12px;
     font-family: "Albert Sans", sans-serif;
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
     cursor: pointer;
     transition: background-color 0.3s ease;
-
-    /*Used to make the buttons overlap over the containers*/
     align-self: flex-end;
-    margin-bottom:-40px;
+    margin-top: clamp(10px, 2vw, 15px);
+    margin-bottom: clamp(-40px, -4vw, -35px);
+    box-sizing: border-box;
 }
-
 
 .container-buttons:hover {
     background-color: #ae4638;
 }
 
-
 .main-content {
-    padding-top: 250px;
-    padding-bottom: 75px; /*Used to create a gap between the main content and footer*/
+    padding-top: clamp(20px, 5vw, 40px);
+    padding-bottom: clamp(50px, 10vw, 75px);
+    padding-left: clamp(10px, 5vw, 20px);
+    padding-right: clamp(10px, 5vw, 20px);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Used to center the containers horizontally */
-    gap: 40px;            /* Used to add spacing between containers */
+    align-items: center;
+    gap: clamp(20px, 5vw, 40px);
 }
 
 .content-wrapper a {
-    text-decoration: none; /*Used to remove the lines under the href link*/
-    color:white;
-    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
     font-family: "Livvic";
 }
 
+/* Small mobile screens */
+@media (max-width: 480px) {
+    .header-section {
+        padding-top: 70px;
+        min-height: 120px;
+    }
+    
+    .title {
+        top: 45px;
+        max-width: calc(100% - 80px);
+    }
+    
+    .title h1 {
+        font-size: clamp(0.8rem, 4vw, 1.2rem);
+        white-space: normal;
+        word-break: break-word;
+        line-height: 1.1;
+    }
+    
+    .logo img {
+        height: clamp(35px, 8vw, 50px);
+    }
+    
+    .nav-list {
+        gap: 0.2rem;
+    }
+    
+    .nav-list li a {
+        padding: 0.2rem 0.3rem;
+        font-size: clamp(0.6rem, 2vw, 0.8rem);
+    }
+    
+    .container {
+        margin: 10px auto;
+        padding: 12px;
+    }
+    
+    .container h3 {
+        padding-left: 8px;
+        font-size: clamp(1.1rem, 4vw, 1.5rem);
+    }
+    
+    .container p {
+        padding-left: 8px;
+        font-size: clamp(0.8rem, 3vw, 1rem);
+    }
+    
+    .table-buttons {
+        height: clamp(45px, 15vw, 60px);
+    }
+    
+    .content-wrapper table {
+        border-spacing: 6px;
+    }
+    
+    .container-buttons {
+        margin-bottom: clamp(-20px, -5vw, -25px);
+    }
+}
 
+/* Tablet landscape and larger screens */
+@media (min-width: 768px) and (orientation: landscape) {
+    .header-section {
+        padding-top: clamp(100px, 15vw, 140px);
+        min-height: clamp(160px, 25vw, 200px);
+    }
+    
+    .title {
+        top: clamp(60px, 12vw, 95px);
+    }
+    
+    .content-wrapper {
+        flex-direction: row;
+        gap: clamp(30px, 6vw, 50px);
+    }
+    
+    .content-wrapper p {
+        flex: 1;
+        min-width: 280px;
+        margin-bottom: 0;
+    }
+    
+    .content-wrapper table {
+        flex: 1;
+        min-width: 300px;
+        margin-top: -20px;
+    }
+}
 
+/* Large desktop screens */
+@media (min-width: 1200px) {
+    .header-section {
+        padding-top: 120px;
+        min-height: 180px;
+    }
+    
+    .title {
+        max-width: 60%;
+        top: 75px;
+    }
+    
+    .title h1 {
+        font-size: 2.5rem;
+    }
+    
+    .navbar {
+        width: 80%;
+        max-width: 1000px;
+    }
+    
+    .container {
+        max-width: 1000px;
+    }
+    
+    .main-content {
+        padding-left: 40px;
+        padding-right: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .header-section {
+        padding-top: 60px;
+        min-height: 110px;
+    }
+    
+    .title {
+        top: 40px;
+    }
+    
+    .title h1 {
+        font-size: clamp(0.7rem, 5vw, 1rem);
+        white-space: normal;
+        word-break: break-word;
+    }
+    
+    .logo img {
+        height: 30px;
+    }
+    
+    .navbar {
+        padding: 0.4rem;
+    }
+    
+    .nav-list {
+        gap: 0.1rem;
+    }
+    
+    .nav-list li a {
+        padding: 0.1rem 0.2rem;
+        font-size: 0.6rem;
+    }
+    
+    .container-buttons {
+        margin-bottom: clamp(-15px, -4vw, -20px);
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    .main-content {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    footer {
+        display: none;
+    }
+    
+    .main-content {
+        padding-top: 50px;
+    }
+    
+    .container {
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+    }
+}
