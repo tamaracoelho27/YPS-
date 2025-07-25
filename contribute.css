@@ -27,7 +27,7 @@ main {
     position: absolute;
     top: 5%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-40%);
     width: max-content;
     max-width: 90vw;
     text-align: center;
@@ -39,7 +39,7 @@ main {
     font-family: "Livvic";
     font-weight: 800;
     color: #238188;
-    font-size: 2rem;
+    font-size: 3rem;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
