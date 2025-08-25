@@ -3,7 +3,7 @@ html, body {
     width: 100vw;
     padding: 0;
     margin: 0;
-    background-color: #c4e2d8;
+    background-color: #F2E9E4;
     cursor: pointer;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
@@ -42,28 +42,21 @@ html, body {
 }
 
 .navbar {
-    background-color: #f0746c;
-    opacity: 0.9;
-    padding: clamp(0.5rem, 2vw, 1rem) clamp(0.3rem, 1vw, 0.5rem);
-    margin-top: clamp(5%, 8%, 12%);
-    position: absolute;
-    left: clamp(5%, 17%, 20%);
-    top: clamp(-2%, -3%, -4%);
-    width: 70%;
-    min-height: fit-content;
-    box-sizing: border-box;
-    border-radius: 40px;
+    width: 100vw;
+    background-color: #F57B6BA6;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
 }
 
 .nav-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: clamp(1rem, 4vw, 4rem);
-    list-style: none;
-    margin-left: 10%;
-    padding: 0 0.05rem;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: center;
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-list li a {
@@ -86,7 +79,7 @@ li:hover {
 .description {
     width: 65%;
     height: 30%;
-    background-color: #539EA1;
+    background-color: #A2CACC;
     position: absolute;
     top: 35%;
     left: 20%;
@@ -149,7 +142,7 @@ li:hover {
     flex-shrink: 0;
     height: auto;
     min-height: 400px;
-    background: #539EA1;
+    background: #A2CACC;
     border-radius: 15px;
     padding: 20px;
     font-size: clamp(1rem, 2vw, 1.2rem);
@@ -225,7 +218,7 @@ li:hover {
 }
 
 .view-more-button {
-    background-color: #f0746c;
+    background-color: #F68B80;
     border: none;
     border-radius: 40px;
     color: white;
@@ -296,7 +289,7 @@ footer {
     }
     
     .navbar {
-        width: 70%;
+        width: 100vw;
         left: 15%;
     }
     
@@ -328,7 +321,7 @@ footer {
     }
     
     .navbar {
-        width: 95%;
+        width: 100vw;
         left: 3%;
         top: 5%;
     }
@@ -380,7 +373,7 @@ footer {
     }
     
     .navbar {
-        width: 90%;
+        width: 100vw;
         left: 5%;
         top: 5%;
     }
@@ -471,7 +464,7 @@ footer {
     }
     
     .navbar {
-        width: 90%;
+        width: 100vw;
         left: 5%;
         top: 5%;
     }
@@ -561,7 +554,7 @@ footer {
     }
     
     .navbar {
-        width: 90%;
+        width: 100vw;
         left: 5%;
         top: 5%;
     }
@@ -655,7 +648,7 @@ footer {
         font-size:120%
     }
     .navbar {
-        width: 95%;
+        width: 100vw;
         left: 2.5%;
         top: 5%;
     }
@@ -812,7 +805,7 @@ footer {
     }
     
     .navbar {
-        width: 95%;
+        width: 100vw;
         left: 3%;
         top: 5%;
     }
