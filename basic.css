@@ -3,7 +3,7 @@ html,body{
     width: 100vw;
     padding:0;
     margin:0;
-    background-color: #c4e2d8;
+    background-color: #F2E9E4;
     cursor:pointer;
 }
 
@@ -28,26 +28,25 @@ html,body{
     color: #238188;
     flex-shrink: 0;
 }
-.navbar{
-    width:70%;
-    background-color:#f0746c;
-    border-radius: 40px;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top: 2rem;
-    padding:1rem 1rem;
+
+.navbar {
+    width: 100vw;
+    background-color: #F57B6BA6;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
 }
-.nav-list{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: space-evenly;
-    text-align: center;
-    gap:4rem;
-    padding-right:5%;
+
+.nav-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
+
 .nav-list li a{
     text-decoration: none;
     color: white;
@@ -108,7 +107,7 @@ footer{
         font-size: 250%;
     }
     .navbar {
-        width: 90%;
+        width: 100vw;
         padding: 0.5rem 0rem;
     }
     
@@ -141,7 +140,7 @@ footer{
     .navbar {
         margin-top:5%;
         left: 2%;
-        width: 96%;
+        width: 100vw;
         padding: 0.5rem 0.2rem;
     }
     
@@ -177,7 +176,6 @@ footer{
         left: 1%;
         min-width: 98%;
         padding: 0.5rem 0rem;
-        border-radius: 25px;
     }
     
     .nav-list {
@@ -219,7 +217,6 @@ footer{
     .navbar {
         margin-top: 10%;
         padding: 0.1rem;;
-        border-radius: 20px;
     }
     
     .nav-list {
@@ -247,7 +244,7 @@ footer{
     }
     
     .navbar {
-        width: 85%;
+        width: 100vw;
     }
 
     .nav-list li a {
