@@ -1,0 +1,396 @@
+/* getInvolved css - revised */
+
+html,body{
+height: 100vh;
+width: 100vw;
+padding:0;
+margin:0;
+background-color: #F2E9E4;
+cursor:pointer;
+}
+
+.logo{
+display:flex;
+flex-direction:row;
+justify-content:flex-start;
+position:absolute;
+top: clamp(1%, 2vw, 3%);
+left: clamp(0.5%, 2vw, 2%);
+
+}
+.title{
+display:flex;
+flex-direction:row;
+justify-content:center;
+}
+.title h1{
+font-family:"Livvic";
+font-size: 300%;
+font-weight: 800;
+color: #238188;
+flex-shrink: 0;
+
+}
+
+.navbar {
+    width: 100vw;
+    background-color: #F57B6BA6;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li a{
+text-decoration: none;
+color: white;
+font-family: "Albert sans";
+font-size:100%
+}
+
+li::after{
+text-decoration:none;
+color:white;
+}
+li:hover{
+transform: scale(1.1);
+transition: ease 0.3s;
+}
+footer{
+    margin-top:auto;
+    width:100%;
+}
+#Footer{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    width:100%;
+    height: 10%;
+    background-color:  #238188;
+    padding-bottom: 0.5rem;
+    position:relative;
+    bottom:0;
+}
+
+#Footer .name{
+    color: white;
+    font-family: "Albert sans";
+    margin-left:5%;
+}
+#Footer a {
+    color: white;
+    text-decoration: none;
+    display: inline-block; 
+    transition: opacity 0.3s ease; 
+}
+
+#Footer a:visited,
+#Footer a:hover,
+#Footer a:active {
+    color: white;
+    text-decoration: none;
+}
+
+#Footer a:hover {
+    opacity: 0.8; 
+    text-decoration: underline; 
+}
+
+.container {
+    background-color: #539EA1A6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: clamp(280px, 90%, 1200px);
+    margin: clamp(15px, 3vw, 25px) auto;
+    padding: clamp(15px, 4vw, 25px);
+    border-radius: clamp(1rem, 3vw, 2rem);
+    font-family: 'Albert Sans', sans-serif;
+    color:#FFFFFF;
+    box-sizing: border-box;
+    min-height: auto;
+}
+
+.container h3 {
+    font-size: clamp(1.3rem, 3.5vw, 2.2rem);
+    margin-bottom: clamp(10px, 2vw, 15px);
+    align-self: flex-start;
+    padding-left: clamp(10px, 3vw, 20px);
+    line-height: 1.2;
+    word-wrap: break-word;
+}
+
+.container p{
+    font-family: "Livvic";
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    align-self: flex-start;
+    padding-left: clamp(10px, 3vw, 20px);
+    line-height: 1.4;
+    margin: 0 0 15px 0;
+    word-wrap: break-word;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: clamp(15px, 4vw, 25px);
+    width: 100%;
+}
+
+.content-wrapper p {
+    flex: 1;
+    min-width: 100%;
+    margin-bottom: clamp(15px, 3vw, 20px);
+}
+
+.content-wrapper table {
+    flex: 1;
+    width: 100%;
+    border-spacing: clamp(8px, 2.5vw, 15px);
+    margin-top: 0;
+}
+
+.content-wrapper table td {
+    width: 50%;
+    vertical-align: top;
+}
+
+.table-buttons {
+    width: 100%;
+    height: clamp(50px, 12vw, 80px);
+    margin-bottom: clamp(10px, 2vw, 15px);
+    background-color: #25828A;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: "Albert Sans", sans-serif;
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: clamp(5px, 2vw, 10px);
+    box-sizing: border-box;
+}
+
+.table-buttons:hover {
+    background-color: #1f6f75;
+}
+
+.table-buttons a {
+    text-decoration: none;
+    color: white;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    font-family: "Livvic";
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.container-buttons {
+    padding: clamp(8px, 2vw, 10px) clamp(15px, 4vw, 20px);
+    background-color: #25828A;
+    width: clamp(200px, 50%, 300px);
+    color: white; 
+    border: none;
+    border-radius: 12px;
+    font-family: "Albert Sans", sans-serif;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-end;
+    margin-top: clamp(10px, 2vw, 15px);
+    margin-bottom: clamp(-40px, -4vw, -35px);
+    box-sizing: border-box;
+}
+
+.container-buttons:hover {
+    background-color: #1E686E;
+}
+
+.main-content {
+    padding-top: clamp(20px, 5vw, 40px);
+    padding-bottom: clamp(50px, 10vw, 75px);
+    padding-left: clamp(10px, 5vw, 20px);
+    padding-right: clamp(10px, 5vw, 20px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(20px, 5vw, 40px);
+}
+
+.content-wrapper a {
+    text-decoration: none;
+    color: white;
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    font-family: "Livvic";
+}
+
+@media (max-width: 1024px) {
+    .title h1 {
+        font-size: 250%;
+    }
+    .navbar {
+        width: 100vw;
+        padding: 0.5rem 0rem;
+    }
+    
+    .nav-list {
+        gap: 2rem;
+    }
+    
+    .nav-list li a {
+        font-size: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    html, body {
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .logo {
+        top: 3%;
+        left: 2%;
+    }
+    
+    .logo img {
+        height: 60px;
+    }
+    .title h1 {
+        font-size: 160%;
+    }
+    .navbar {
+        margin-top:5%;
+        left: 2%;
+        width: 100vw;
+        padding: 0.5rem 0.2rem;
+    }
+    
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-left: 2%;
+        justify-content: center;
+    }
+    
+    .nav-list li a {
+        font-size: 70%;
+        padding: 0.3rem 0.5rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .logo {
+        top: 1%;
+        left: 1%;
+    }
+    .logo img {
+        height: 50px;
+    }
+    .title h1 {
+        font-size: 120%;
+        margin-left:10%;
+    }
+    
+    .navbar {
+        top: 25%;
+        left: 1%;
+        min-width: 98%;
+        padding: 0.5rem 0rem;
+    }
+    
+    .nav-list {
+        gap: 0.2rem;
+        margin-left: 1%;
+        flex-wrap: wrap;
+    }
+    
+    .nav-list li {
+        flex: 0 0 auto;
+    }
+    
+    .nav-list li a {
+        font-size: 75%;
+        padding: 0.4rem 0.6rem;
+        display: block;
+        text-align: center;
+    }
+     #Footer{
+        height:20%;
+        flex-direction: column;
+        text-align: center;
+    }
+    #Footer .name {
+        font-size: 70%;
+    }
+}
+
+
+@media (max-width: 360px) {
+    .logo img {
+        height: 40px;
+    }
+    
+    .title h1 {
+        font-size: 100%;
+    }
+    
+    .navbar {
+        margin-top: 10%;
+        padding: 0.1rem;;
+    }
+    
+    .nav-list {
+        margin-left:0%;
+        gap: 0.5rem;
+    }
+    
+    .nav-list li a {
+        font-size: 60%;
+        padding: 0.3rem 0.4rem;
+    }
+    #Footer{
+        height:20%;
+        flex-direction: column;
+        text-align: center;
+    }
+    #Footer .name {
+        font-size: 70%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .title h1 {
+        font-size: 300%;
+    }
+    
+    .navbar {
+        width: 100vw;
+    }
+
+    .nav-list li a {
+        font-size: 120%;
+    }
+}
+ 
+
