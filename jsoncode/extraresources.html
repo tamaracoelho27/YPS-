@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <link rel="stylesheet" href="extraresources.css">
+</head>
+<body>
+    <header> 
+        <div class="logo">
+            <a href="homepage.html"><img src="logo.png" alt="YPS Logo" height="80"></a>
+        </div>
+        <div class="title">
+            <h1>YOUTH PSYCHOLOGY SOCIETY</h1>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Get Involved</a></li>
+                <li><a href="#">Initiatives</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Contribute</a></li>
+        </nav>
+    </header>
+    <div id="resources-container"></div>
+    <footer>
+        <div id="Footer">
+            <p class="name"><strong>Contact Us:</strong> Email</p>
+            <p class="name"><strong>Instagram:</strong><a href="https://www.instagram.com/youthpsychologysociety/?hl=en"> YPS Instagram</a></p>
+            <p class="name"><strong>Linkedin:</strong><a href="https://www.linkedin.com/company/youth-psychology-society/posts/?feedView=all"> YPS Linkedin</a> </p>
+        </div>
+    </footer>
+    <script> 
+        const sheetID="1YhQoLYzcI8E5oM05k-HjeQvijf9PUdwHq1kIdfVtc40";
+        const sheetName = 'Sheet1';
+        const url = `https://opensheet.elk.sh/${sheetID}/${sheetName}`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById('resources-container');
+      data.forEach(item => {
+        container.innerHTML += `
+          <div class="resource">
+            <h3>${item.Title}</h3>
+            <p>${item.Description}</p>
+            <a href="${item.Link}" target="_blank">Visit</a>
+          </div>
+        `;
+      });
+    })
+    .catch(error => console.error('Error loading data:', error));
+    </script>
+</body>
+</html>
